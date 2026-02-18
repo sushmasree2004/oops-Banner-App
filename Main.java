@@ -1,20 +1,25 @@
 /*
 
 @author : B.Sushma Sree
-@version: 3
+@version: 5
 
 */
 
+
 class Main
-{ public static void main(String args[])
+{
+    public static void main(String args[])
     {
-          System.out.println(String.join(" ","    ****    ","   ****    ","  *********","    ******"));
-          System.out.println(String.join(" ","  ***  ***  ","  ***   ***","  *********","   **     "));
-          System.out.println(String.join(" ","  **     ** ","**      ** ","  *      **","  **      "));
-          System.out.println(String.join(" ","  **     ** ","**      ** ","  *********","    ****  "));
-          System.out.println(String.join(" ","  **     ** ","**      ** ","  *********","        **"));
-          System.out.println(String.join(" ","  ***  ***  ","  ***  *** ","  **       ","        **"));
-          System.out.println(String.join(" ","    ****    ","   ****    ","  **       ","   ****** "));
+         String[] names={"7-Eleven","Slurpee","GSC","squad","Intern","Banglore","Yelhanka"};   
+
+         for(String line: names)
+         { 
+           System.out.println(line);
+         }
+
+
+
      }
 
 }
+
