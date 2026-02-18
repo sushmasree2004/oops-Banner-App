@@ -1,15 +1,21 @@
 /*
 
 @author : B.Sushma Sree
-@version: 1
+@version: 2
 
 */
 
 class Main
 {
     public static void main(String args[])
-    {
-        System.out.print("OOPS ");
+   {
+         System.out.println("   ****    "+"  "+"   ****    "+"  *********"+"    ******");
+         System.out.println("  ***  *** "+"  "+"  ***  *** "+"  *********"+"   **     ");
+         System.out.println(" **     ** "+"  "+" **     ** "+"  *      **"+"  **      ");
+         System.out.println(" **     ** "+"  "+" **     ** "+"  *********"+"    ****  ");
+         System.out.println(" **     ** "+"  "+" **     ** "+"  *********"+"        **");
+         System.out.println("  ***  *** "+"  "+"  ***  *** "+"  **       "+"        **");
+         System.out.println("   ****    "+"  "+"   ****    "+"  **       "+"   ****** ");
     }
 
 }
