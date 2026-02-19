@@ -1,16 +1,89 @@
 /*
 
 @author : B.Sushma Sree
-@version: 6
+@version: 7
 
 */
 
 
 class Main
 {
-    public static String[] getPatternO(){
-        return new String[]
-            {
+    
+	public static class CharacterPatternMap
+	{
+		Character character;
+		String [] pattern;
+		
+		CharacterPatternMap(Character character,String[] pattern)
+		{
+			
+			this.character=character;
+			this.pattern=pattern;
+			
+		}
+		public Character getCharacter()
+		{
+			return character;
+		}
+		
+		public String[] getPattern()
+		{
+			return pattern;
+		}
+		
+	}
+	
+	public static String[]  getCharacterPattern(Character ch,CharacterPatternMap[]  charMaps)
+	{
+		
+		for(CharacterPatternMap map:charMaps)
+		{
+			if(map.getCharacter().equals(ch))
+			{
+				return map.getPattern();
+			}
+			
+		}
+		
+		return new String[7];
+		
+		
+		
+	}
+	
+	
+	public static void printBanner(String word,CharacterPatternMap[] maps )
+	{
+		StringBuilder bannerLines[]=new StringBuilder[7];
+		for(int i=0;i<7;i++)
+		{
+			bannerLines[i]=new StringBuilder();
+		}
+		
+		
+		for(char ch:word.toCharArray())
+		{
+			
+			String pattern[]=getCharacterPattern(ch,maps);
+			for(int i=0;i<7;i++)
+			{
+				bannerLines[i].append(pattern[i]).append(" ");
+				
+			}
+		}
+		
+		for(StringBuilder line:bannerLines)
+		{
+			
+			System.out.println(line);
+		}
+		
+	}
+	
+	public static void main(String[] args)
+	{
+		
+		String o[]={
                  "    *****     ",
                  "  ***    ***  ",
                  " **        ** ",
@@ -19,13 +92,9 @@ class Main
                  "  ***    ***  ",
                  "    *****     "
             };
-    }
-
-
-
-    public static String[] getPatternP(){
-        return new String[]
-            {
+			
+			
+	    String p[]={
                  " ************* ",
                  " ************* ",
                  " **        *** ",
@@ -35,12 +104,9 @@ class Main
                  " **            ",
 				 " **            "
             };
-    }
-	
-	public static String[]  getPatternS(){
-		
-		return new String[]
-		{
+			
+			
+	    String s[]={
 			
 			"    ******  ",
 			"   **       ",
@@ -53,46 +119,27 @@ class Main
 			
 		};
 		
-		
-	}
-	
-	
-	
-    public static void main(String args[])
-    {
-        String []o1=getPatternO();
-		String []o2=getPatternO();
-		String [] p=getPatternP();
-		String [] s=getPatternS();
+		CharacterPatternMap  oPattern=new CharacterPatternMap('O',o);
+		CharacterPatternMap pPattern=new CharacterPatternMap('P',p);
+		CharacterPatternMap  sPattern=new CharacterPatternMap('S',s);
 		
 		
-		for(int i=0;i<o1.length;i++)
-		{
-			
-			System.out.println(o1[i]);
-		}
+		CharacterPatternMap [] maps={oPattern,pPattern,sPattern};
+		printBanner("OOPS",maps);
+    }
+					
 		
-		for(int i=0;i<o2.length;i++)
-		{
-			
-			System.out.println(o2[i]);
-		}
-		
-		
-		for(int i=0;i<p.length;i++)
-		{
-			
-			System.out.println(p[i]);
-		}
-		
-		for(int i=0;i<s.length;i++)
-		{
-			
-			System.out.println(s[i]);
-		}
-
-
-
-     }
-
 }
+	
+	
+		
+		
+		
+	
+
+
+
+
+
+
+
